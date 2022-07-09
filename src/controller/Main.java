@@ -22,5 +22,17 @@ public class Main {
 
         System.out.println(produtos);
 
+        Funcionario funcionario1 = new Funcionario("João da Silva", 1250);
+        Funcionario funcionario2 = new Funcionario("Paulo de Almeida", 1000);
+        Funcionario funcionario3 = new Funcionario("Carlos Alcantra Bragança", 1400);
+
+        List<Funcionario> funcionarios = new ArrayList<>();
+        funcionarios.add(funcionario1);
+        funcionarios.add(funcionario2);
+        funcionarios.add(funcionario3);
+
+
+
+        System.out.println(funcionarios);
     }
 }
