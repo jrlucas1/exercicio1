@@ -1,10 +1,7 @@
 package controller;
 import model.Funcionario;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class funcionarioController{
     public static void main(String[] args) {
@@ -23,7 +20,8 @@ public class funcionarioController{
 
     // Lista de funcionários
         System.out.println("Fazendo uma lista de funcionários...");
-    List<Funcionario> funcionarios = new ArrayList<>();
+
+        List<Funcionario> funcionarios = new ArrayList<>();
         funcionarios.add(funcionario1);
         funcionarios.add(funcionario2);
         funcionarios.add(funcionario3);
@@ -35,11 +33,16 @@ public class funcionarioController{
 
     // Pesquisa na lista de funcionarios
         System.out.println("\nPesquisando o funcionario de id 3 na lista de funcionarios...");
-    Funcionario funcionarioBusca = funcionarios.stream().filter(f -> f.getId().equals("3")).findAny().orElse(null);
+        Funcionario funcionarioBusca = funcionarios.stream().filter(f -> f.getId().equals("3")).findAny().orElse(null);
         System.out.println(funcionarioBusca);
 
-    // Map de funcionarios
+    // Printando a lista em ordem descrente
+        System.out.println("\n\nPrintando a lista em ordem decrescente");
+        funcionarios.sort(Comparator.comparing(Funcionario::getId).reversed());
+        System.out.println(funcionarios);
 
+    // Map de funcionarios
+        System.out.println("\n\n\n\nFazendo um mapa de funcionarios");
     Map<String, Funcionario> funcionariosMap = new HashMap<>();
 
         funcionariosMap.put(funcionario1.getId(), funcionario1);

@@ -1,7 +1,7 @@
 package model;
 
 public class Conta {
-    public int id;
+    private String id;
     private double saldo;
 
 
@@ -11,30 +11,36 @@ public class Conta {
         return saldo;
     }
 
+    public String getId() {
+        return id;
+    }
+
     public void deposita(double saldo) { //setter
         this.saldo = this.saldo + saldo;
     }
 
-    public void setSaldo(double saldo) {
-        if (this.saldo != 0) {
-            this.saldo = this.saldo - saldo;
-        }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void atualiza(double taxa){
         this.saldo = this.saldo * taxa;
     }
 
-    public Conta(int id, double saldo){
+    public Conta(String id, double saldo){
+        this.id = id;
         this.saldo = saldo;
     }
 
     //
 
+
     @Override
     public String toString() {
         return "Conta{" +
-                "saldo=" + saldo +
+                "id='" + id + '\'' +
+                ", saldo=" + saldo +
                 '}';
     }
 }

@@ -1,10 +1,7 @@
 package controller;
 import model.Carro;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class carroController {
     public static void main(String[] args) {
@@ -32,8 +29,16 @@ public class carroController {
         Carro carrosBusca = carros.stream().filter(c->c.getId().equals("3")).findAny().orElse(null);
         System.out.println(carrosBusca);
 
+        //Printando lista na ordem decrescente
+        System.out.println("\n\nPrintando carros em ordem descrente de ID");
+        carros.sort(Comparator.comparing(Carro::getId).reversed());
+        System.out.println(carros);
+
+
+
+
         // Fazendo um map de carros
-        System.out.println("\n\nFazendo um map de carros");
+        System.out.println("\n\n\n\nFazendo um map de carros");
         Map<String, Carro> carrosMap = new HashMap<>();
 
         carrosMap.put(carro1.getId(), carro1);
@@ -48,6 +53,5 @@ public class carroController {
         // Pesquisando no map de carros
         System.out.println("\n\nPesquisando o carro de id 3 nesse mapa de carros");
         System.out.println(carrosMap.get(carro3.getId()));
-
     }
 }

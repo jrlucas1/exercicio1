@@ -2,10 +2,7 @@ package controller;
 
 import model.Produto;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class produtoController {
     public static void main(String[] args) {
@@ -31,12 +28,19 @@ public class produtoController {
         // Pesquisando em uma lista
 
         System.out.println("\n\nPesquisando um objeto de id = 3 na lista produtos...");
-
         Produto produtosBusca = produtos.stream().filter(p-> p.getId().equals("3")).findAny().orElse(null);
         System.out.println(produtosBusca);
 
+        //ordendando a lista em ordem decrescente
+        System.out.println("\n\nOrdenando a lista em ordem decrescente");
+        produtos.sort(Comparator.comparing(Produto::getId).reversed());
+        System.out.println(produtos);
+
+
 
         // Map de produtos
+
+        System.out.println("\n\n\n\nFazendo um Map de produtos");
         Map<String, Produto> produtosMap = new HashMap<>();
 
         produtosMap.put(produto1.getId(), produto1);
@@ -50,6 +54,9 @@ public class produtoController {
         // Pesquisando em um map
         System.out.println("\n\nPesquisando um objeto de id = 3 no map produtosMap");
         System.out.println(produtosMap.get(produto3.getId()));
+
+
+
 
     }
 }
