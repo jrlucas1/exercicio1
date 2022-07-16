@@ -1,6 +1,7 @@
 package model;
 
 public class Carro {
+    private String id;
     private String marca;
     private String modelo;
     private int anoFabricacao;
@@ -19,6 +20,9 @@ public class Carro {
         return anoFabricacao;
     }
 
+    public String getId() {
+        return id;
+    }
     //setter
 
     public void setMarca(String marca) {
@@ -33,9 +37,13 @@ public class Carro {
         this.anoFabricacao = anoFabricacao;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
     // instancias
 
-    public Carro (String marca, String modelo, int anoFabricacao){
+    public Carro (String id, String marca, String modelo, int anoFabricacao){
+        this.id = id;
         this.marca = marca;
         this.modelo = modelo;
         this.anoFabricacao = anoFabricacao;
@@ -47,7 +55,8 @@ public class Carro {
     @Override
     public String toString() {
         return "Carro{" +
-                "marca='" + marca + '\'' +
+                "id=" + id +
+                ", marca='" + marca + '\'' +
                 ", modelo='" + modelo + '\'' +
                 ", anoFabricacao=" + anoFabricacao +
                 '}';

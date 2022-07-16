@@ -1,6 +1,7 @@
 package model;
 
 public class Conta {
+    public int id;
     private double saldo;
 
 
@@ -24,7 +25,7 @@ public class Conta {
         this.saldo = this.saldo * taxa;
     }
 
-    public Conta(double saldo){
+    public Conta(int id, double saldo){
         this.saldo = saldo;
     }
 

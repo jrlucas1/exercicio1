@@ -1,6 +1,7 @@
 package model;
 
 public class Produto{
+    final String id;
     private String name;
     private String descricao;
     private double valor;
@@ -25,6 +26,9 @@ public class Produto{
         return estoque;
     }
 
+    public String getId() {
+        return id;
+    }
 
     //setters
 
@@ -46,7 +50,8 @@ public class Produto{
 
     //instancias
 
-    public Produto(String name, String descricao, double valor, int estoque){
+    public Produto(String id, String name, String descricao, double valor, int estoque){
+        this.id = id;
         this.name = name;
         this.descricao = descricao;
         this.valor = valor;
@@ -59,7 +64,8 @@ public class Produto{
     @Override
     public String toString() {
         return "Produto{" +
-                "name='" + name + '\'' +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
                 ", descricao='" + descricao + '\'' +
                 ", valor=" + valor +
                 ", estoque=" + estoque +
